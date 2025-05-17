@@ -8,6 +8,9 @@ import java.util.HashSet;
 
 public class LipidScoreUnit implements RuleUnitData {
 
+    // !TODO insert here the code to store the data structures containing the facts where the rules will be applied
+    //not needed since you do not need to store the triggered data
+
     private final DataStore<Annotation> annotations;
 
     public LipidScoreUnit() {
@@ -16,7 +19,6 @@ public class LipidScoreUnit implements RuleUnitData {
 
     public LipidScoreUnit(DataStore<Annotation> annotations) {
         this.annotations = annotations;
-
     }
 
     public DataStore<Annotation> getAnnotations() {

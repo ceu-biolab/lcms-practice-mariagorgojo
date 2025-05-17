@@ -1,6 +1,6 @@
 package lipid;
 
-public class Peak {
+public class Peak implements Comparable<Peak> {
 
     private final double mz;
     private final double intensity;
@@ -29,10 +29,15 @@ public class Peak {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Peak)) return false;
-        Peak other = (Peak) obj;
-        return Double.compare(mz, other.mz) == 0;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if(!(o instanceof Peak)) return false;
+        Peak other = (Peak) o;
+        return Double.compare(other.mz, mz) == 0;
+    }
+
+    @Override
+    public int compareTo(Peak o) {
+        return Double.compare(this.mz, o.mz);
     }
 }
